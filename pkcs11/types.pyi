@@ -189,7 +189,7 @@ class PublicKey(Key):
 
 class PrivateKey(Key):
     object_class: Incomplete
-    def key_length(self): ...
+    key_length: int
 
 class Certificate(Object):
     object_class: Incomplete

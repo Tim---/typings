@@ -40,7 +40,7 @@ class RSAKey:
     def RSASSA_PSS_verify(self, mHash, S, hAlg, sLen: int = 0): ...
     def sign(
         self,
-        bytes,
+        bytes: bytes,
         padding: str = "pkcs1",
         hashAlg: Incomplete | None = None,
         saltLen: Incomplete | None = None,
