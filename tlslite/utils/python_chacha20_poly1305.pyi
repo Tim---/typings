@@ -1,0 +1,3 @@
+from .chacha20_poly1305 import CHACHA20_POLY1305 as CHACHA20_POLY1305
+
+def new(key): ...

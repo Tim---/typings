@@ -1,0 +1,3 @@
+from tlslite.utils.aesccm import AESCCM as AESCCM
+
+def new(key, tagLength: int = 16): ...

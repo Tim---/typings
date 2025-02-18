@@ -1,0 +1,13 @@
+from .cryptomath import *
+from .rc4 import RC4 as RC4
+from _typeshed import Incomplete
+
+def new(key): ...
+
+class Python_RC4(RC4):
+    S: Incomplete
+    i: int
+    j: int
+    def __init__(self, keyBytes) -> None: ...
+    def encrypt(self, plaintextBytes): ...
+    def decrypt(self, ciphertext): ...
