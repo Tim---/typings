@@ -1,3 +1,6 @@
+from collections.abc import Iterator
+import types
+from typing import Any, Optional, Self
 from .constants import (
     Attribute as Attribute,
     MechanismFlag as MechanismFlag,
@@ -83,9 +86,9 @@ class Token:
     def open(
         self,
         rw: bool = False,
-        user_pin: Incomplete | None = None,
-        so_pin: Incomplete | None = None,
-    ) -> None: ...
+        user_pin: Optional[str] = None,
+        so_pin: Optional[str] = None,
+    ) -> Session: ...
 
 class Session:
     token: Incomplete
@@ -94,7 +97,7 @@ class Session:
     def __init__(self, token, handle, rw: bool = False, user_type=...) -> None: ...
     def __eq__(self, other): ...
     def __hash__(self): ...
-    def __enter__(self): ...
+    def __enter__(self) -> Self: ...
     def __exit__(
         self,
         type_: type[BaseException] | None,
@@ -109,7 +112,9 @@ class Session:
         label: Incomplete | None = None,
         id: Incomplete | None = None,
     ): ...
-    def get_objects(self, attrs: Incomplete | None = None) -> None: ...
+    def get_objects(
+        self, attrs: Optional[dict[int, Any]] = None
+    ) -> Iterator[Object]: ...
     def create_object(self, attrs) -> None: ...
     def create_domain_parameters(
         self, key_type, attrs, local: bool = False, store: bool = False
