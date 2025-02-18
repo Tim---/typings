@@ -2,9 +2,99 @@ import _cython_3_0_8
 import pkcs11.types
 import pkcs11.types as types
 from _typeshed import Incomplete
-from pkcs11.constants import Attribute as Attribute, CertificateType as CertificateType, MechanismFlag as MechanismFlag, ObjectClass as ObjectClass, SlotFlag as SlotFlag, TokenFlag as TokenFlag, UserType as UserType
-from pkcs11.exceptions import AlreadyInitialized as AlreadyInitialized, AnotherUserAlreadyLoggedIn as AnotherUserAlreadyLoggedIn, ArgumentsBad as ArgumentsBad, AttributeReadOnly as AttributeReadOnly, AttributeSensitive as AttributeSensitive, AttributeTypeInvalid as AttributeTypeInvalid, AttributeValueInvalid as AttributeValueInvalid, DataInvalid as DataInvalid, DataLenRange as DataLenRange, DeviceError as DeviceError, DeviceMemory as DeviceMemory, DeviceRemoved as DeviceRemoved, DomainParamsInvalid as DomainParamsInvalid, EncryptedDataInvalid as EncryptedDataInvalid, EncryptedDataLenRange as EncryptedDataLenRange, ExceededMaxIterations as ExceededMaxIterations, FunctionCancelled as FunctionCancelled, FunctionFailed as FunctionFailed, FunctionNotSupported as FunctionNotSupported, FunctionRejected as FunctionRejected, GeneralError as GeneralError, HostMemory as HostMemory, KeyHandleInvalid as KeyHandleInvalid, KeyIndigestible as KeyIndigestible, KeyNeeded as KeyNeeded, KeyNotNeeded as KeyNotNeeded, KeyNotWrappable as KeyNotWrappable, KeySizeRange as KeySizeRange, KeyTypeInconsistent as KeyTypeInconsistent, KeyUnextractable as KeyUnextractable, MechanismInvalid as MechanismInvalid, MechanismParamInvalid as MechanismParamInvalid, MultipleObjectsReturned as MultipleObjectsReturned, MultipleTokensReturned as MultipleTokensReturned, NoSuchKey as NoSuchKey, NoSuchToken as NoSuchToken, ObjectHandleInvalid as ObjectHandleInvalid, OperationActive as OperationActive, OperationNotInitialized as OperationNotInitialized, PKCS11Error as PKCS11Error, PinExpired as PinExpired, PinIncorrect as PinIncorrect, PinInvalid as PinInvalid, PinLenRange as PinLenRange, PinLocked as PinLocked, PinTooWeak as PinTooWeak, PublicKeyInvalid as PublicKeyInvalid, RandomNoRNG as RandomNoRNG, RandomSeedNotSupported as RandomSeedNotSupported, SessionClosed as SessionClosed, SessionCount as SessionCount, SessionExists as SessionExists, SessionHandleInvalid as SessionHandleInvalid, SessionReadOnly as SessionReadOnly, SessionReadOnlyExists as SessionReadOnlyExists, SessionReadWriteSOExists as SessionReadWriteSOExists, SignatureInvalid as SignatureInvalid, SignatureLenRange as SignatureLenRange, SlotIDInvalid as SlotIDInvalid, TemplateIncomplete as TemplateIncomplete, TemplateInconsistent as TemplateInconsistent, TokenNotPresent as TokenNotPresent, TokenNotRecognised as TokenNotRecognised, TokenWriteProtected as TokenWriteProtected, UnwrappingKeyHandleInvalid as UnwrappingKeyHandleInvalid, UnwrappingKeySizeRange as UnwrappingKeySizeRange, UnwrappingKeyTypeInconsistent as UnwrappingKeyTypeInconsistent, UserAlreadyLoggedIn as UserAlreadyLoggedIn, UserNotLoggedIn as UserNotLoggedIn, UserPinNotInitialized as UserPinNotInitialized, UserTooManyTypes as UserTooManyTypes, WrappedKeyInvalid as WrappedKeyInvalid, WrappedKeyLenRange as WrappedKeyLenRange, WrappingKeyHandleInvalid as WrappingKeyHandleInvalid, WrappingKeySizeRange as WrappingKeySizeRange, WrappingKeyTypeInconsistent as WrappingKeyTypeInconsistent
-from pkcs11.mechanisms import KDF as KDF, KeyType as KeyType, MGF as MGF, Mechanism as Mechanism
+from pkcs11.constants import (
+    Attribute as Attribute,
+    CertificateType as CertificateType,
+    MechanismFlag as MechanismFlag,
+    ObjectClass as ObjectClass,
+    SlotFlag as SlotFlag,
+    TokenFlag as TokenFlag,
+    UserType as UserType,
+)
+from pkcs11.exceptions import (
+    AlreadyInitialized as AlreadyInitialized,
+    AnotherUserAlreadyLoggedIn as AnotherUserAlreadyLoggedIn,
+    ArgumentsBad as ArgumentsBad,
+    AttributeReadOnly as AttributeReadOnly,
+    AttributeSensitive as AttributeSensitive,
+    AttributeTypeInvalid as AttributeTypeInvalid,
+    AttributeValueInvalid as AttributeValueInvalid,
+    DataInvalid as DataInvalid,
+    DataLenRange as DataLenRange,
+    DeviceError as DeviceError,
+    DeviceMemory as DeviceMemory,
+    DeviceRemoved as DeviceRemoved,
+    DomainParamsInvalid as DomainParamsInvalid,
+    EncryptedDataInvalid as EncryptedDataInvalid,
+    EncryptedDataLenRange as EncryptedDataLenRange,
+    ExceededMaxIterations as ExceededMaxIterations,
+    FunctionCancelled as FunctionCancelled,
+    FunctionFailed as FunctionFailed,
+    FunctionNotSupported as FunctionNotSupported,
+    FunctionRejected as FunctionRejected,
+    GeneralError as GeneralError,
+    HostMemory as HostMemory,
+    KeyHandleInvalid as KeyHandleInvalid,
+    KeyIndigestible as KeyIndigestible,
+    KeyNeeded as KeyNeeded,
+    KeyNotNeeded as KeyNotNeeded,
+    KeyNotWrappable as KeyNotWrappable,
+    KeySizeRange as KeySizeRange,
+    KeyTypeInconsistent as KeyTypeInconsistent,
+    KeyUnextractable as KeyUnextractable,
+    MechanismInvalid as MechanismInvalid,
+    MechanismParamInvalid as MechanismParamInvalid,
+    MultipleObjectsReturned as MultipleObjectsReturned,
+    MultipleTokensReturned as MultipleTokensReturned,
+    NoSuchKey as NoSuchKey,
+    NoSuchToken as NoSuchToken,
+    ObjectHandleInvalid as ObjectHandleInvalid,
+    OperationActive as OperationActive,
+    OperationNotInitialized as OperationNotInitialized,
+    PKCS11Error as PKCS11Error,
+    PinExpired as PinExpired,
+    PinIncorrect as PinIncorrect,
+    PinInvalid as PinInvalid,
+    PinLenRange as PinLenRange,
+    PinLocked as PinLocked,
+    PinTooWeak as PinTooWeak,
+    PublicKeyInvalid as PublicKeyInvalid,
+    RandomNoRNG as RandomNoRNG,
+    RandomSeedNotSupported as RandomSeedNotSupported,
+    SessionClosed as SessionClosed,
+    SessionCount as SessionCount,
+    SessionExists as SessionExists,
+    SessionHandleInvalid as SessionHandleInvalid,
+    SessionReadOnly as SessionReadOnly,
+    SessionReadOnlyExists as SessionReadOnlyExists,
+    SessionReadWriteSOExists as SessionReadWriteSOExists,
+    SignatureInvalid as SignatureInvalid,
+    SignatureLenRange as SignatureLenRange,
+    SlotIDInvalid as SlotIDInvalid,
+    TemplateIncomplete as TemplateIncomplete,
+    TemplateInconsistent as TemplateInconsistent,
+    TokenNotPresent as TokenNotPresent,
+    TokenNotRecognised as TokenNotRecognised,
+    TokenWriteProtected as TokenWriteProtected,
+    UnwrappingKeyHandleInvalid as UnwrappingKeyHandleInvalid,
+    UnwrappingKeySizeRange as UnwrappingKeySizeRange,
+    UnwrappingKeyTypeInconsistent as UnwrappingKeyTypeInconsistent,
+    UserAlreadyLoggedIn as UserAlreadyLoggedIn,
+    UserNotLoggedIn as UserNotLoggedIn,
+    UserPinNotInitialized as UserPinNotInitialized,
+    UserTooManyTypes as UserTooManyTypes,
+    WrappedKeyInvalid as WrappedKeyInvalid,
+    WrappedKeyLenRange as WrappedKeyLenRange,
+    WrappingKeyHandleInvalid as WrappingKeyHandleInvalid,
+    WrappingKeySizeRange as WrappingKeySizeRange,
+    WrappingKeyTypeInconsistent as WrappingKeyTypeInconsistent,
+)
+from pkcs11.mechanisms import (
+    KDF as KDF,
+    KeyType as KeyType,
+    MGF as MGF,
+    Mechanism as Mechanism,
+)
 from typing import ClassVar
 
 ATTRIBUTE_TYPES: dict
@@ -30,7 +120,6 @@ class AttributeList:
     def __reduce__(self): ...
 
 class Certificate(pkcs11.types.Certificate): ...
-
 class DecryptMixin(pkcs11.types.DecryptMixin): ...
 
 class DeriveMixin(pkcs11.types.DeriveMixin):
@@ -53,7 +142,6 @@ class Object(pkcs11.types.Object):
     def __setitem__(self, index, object) -> None: ...
 
 class PrivateKey(pkcs11.types.PrivateKey): ...
-
 class PublicKey(pkcs11.types.PublicKey): ...
 
 class SearchIter:

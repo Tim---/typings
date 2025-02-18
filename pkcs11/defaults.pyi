@@ -1,4 +1,9 @@
-from .constants import Attribute as Attribute, CertificateType as CertificateType, MechanismFlag as MechanismFlag, ObjectClass as ObjectClass
+from .constants import (
+    Attribute as Attribute,
+    CertificateType as CertificateType,
+    MechanismFlag as MechanismFlag,
+    ObjectClass as ObjectClass,
+)
 from .mechanisms import KeyType as KeyType, MGF as MGF, Mechanism as Mechanism
 from _typeshed import Incomplete
 

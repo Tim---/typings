@@ -1,5 +1,9 @@
 from . import biginteger as biginteger
-from ..constants import Attribute as Attribute, MechanismFlag as MechanismFlag, ObjectClass as ObjectClass
+from ..constants import (
+    Attribute as Attribute,
+    MechanismFlag as MechanismFlag,
+    ObjectClass as ObjectClass,
+)
 from ..defaults import DEFAULT_KEY_CAPABILITIES as DEFAULT_KEY_CAPABILITIES
 from ..mechanisms import KeyType as KeyType
 from _typeshed import Incomplete
